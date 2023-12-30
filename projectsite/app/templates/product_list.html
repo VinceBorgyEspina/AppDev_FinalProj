@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Product List - Borgy's Store{% endblock %}
+
+{% block content %}
+    <h1>Products</h1>
+    <table border="1">
+        <!-- Your product list table content here -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</a></td>
+                    <td>{{ product.price }}</td>
+                    <td><img src="{{ product.image.url }}" alt="{{ product.name }} Image"></td>
+                    <!-- <p>Debug URL: {{ product.image.url }}</p> -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

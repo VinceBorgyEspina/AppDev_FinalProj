@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Item List - Your Website{% endblock %}
+
+{% block content %}
+    <h1>Order Items</h1>
+    <table border="1">
+        <!-- Your order item list table content here -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Order</th>
+                <th>Products</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}
+                <tr>
+                    <td>{{ order_item.id }}</td>
+                    <td>{{ order_item.order.id }}</a></td>
+                    <td>{{ order_item.products.all|join:", " }}</td>
+                    <td>{{ order_item.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
