@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Order List - Your Website{% endblock %}
 
@@ -9,7 +10,8 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Customer</th>
+                <th>Customer Last Name</th>
+                <th>Customer First Name</th>
                 <th>Order Date</th>
             </tr>
         </thead>
@@ -17,7 +19,8 @@
             {% for order in orders %}
                 <tr>
                     <td>{{ order.id }}</td>
-                    <td><a href="{% url 'order-detail' order.pk %}">{{ order.customer.get_full_name }}</a></td>
+                    <td>{{ order.customer.last_name}}</a></td>
+                    <td>{{ order.customer.first_name}}</a></td>
                     <td>{{ order.order_date }}</td>
                 </tr>
             {% endfor %}
