@@ -5,7 +5,7 @@
 
 {% block content %}
     <h1>Categories</h1>
-    <table border="1">
+    <table class="table table-bordered table-striped">
         <!-- Your category list table content here -->
         <thead>
             <tr>
@@ -27,4 +27,5 @@
             {% endfor %}
         </tbody>
     </table>
+    {% include 'includes/pagination.html' %}
 {% endblock %}

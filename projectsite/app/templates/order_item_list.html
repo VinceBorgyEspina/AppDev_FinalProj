@@ -5,13 +5,13 @@
 
 {% block content %}
     <h1>Order Items</h1>
-    <table border="1">
+    <table class="table table-bordered table-striped">
         <!-- Your order item list table content here -->
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Order</th>
-                <th>Products</th>
+                <th>Different Products</th>
                 <th>Quantity</th>
             </tr>
         </thead>
@@ -26,4 +26,5 @@
             {% endfor %}
         </tbody>
     </table>
+    {% include 'includes/pagination.html' %}
 {% endblock %}
